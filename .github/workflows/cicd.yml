@@ -30,6 +30,7 @@ jobs:
 
       - name: Set up buildx
         uses: docker/setup-buildx-action@v3
+        id: bx
 
       - name: Reserve cache space
         uses: actions/cache@v4
