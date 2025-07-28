@@ -1,0 +1,5 @@
+services:
+  test-gha-cache:
+    build:
+      context: .
+      dockerfile: Dockerfile
