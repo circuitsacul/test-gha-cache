@@ -37,7 +37,8 @@ jobs:
         id: cm
         with:
           path: buildx-cache-mounts
-          key: cm-${{ runner.os }}-${{ hashFiles('Dockerfile') }}
+          key: this-cant-possibly-miss
+          # key: cm-${{ runner.os }}-${{ hashFiles('Dockerfile') }}
 
       # Inject previously saved cache-mount contents into the builder
       - name: Inject cache mounts

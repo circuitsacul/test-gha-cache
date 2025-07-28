@@ -6,9 +6,9 @@ ARG APP_NAME
 WORKDIR /app
 
 COPY . .
-RUN --mount=type=cache,id=cargo-registry,target=/usr/local/cargo/registry \
-    --mount=type=cache,id=cargo-git,target=/usr/local/cargo/git \
-    --mount=type=cache,id=cargo-target,target=/app/target \
+RUN --mount=type=cache,target=/usr/local/cargo/registry \
+    --mount=type=cache,target=/usr/local/cargo/git \
+    --mount=type=cache,target=/app/target \
     cargo build --release --bin ${APP_NAME} \
     && mv /app/target/release/${APP_NAME} /usr/local/bin
 
