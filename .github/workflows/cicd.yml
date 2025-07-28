@@ -45,8 +45,6 @@ jobs:
           builder: ${{ steps.bx.outputs.name }}
           cache-dir: buildx-cache-mounts
           dockerfile: Dockerfile
-          # optional: skip extraction later if we already had a cache hit
-          skip-extraction: ${{ steps.cm.outputs.cache-hit }}
 
       - name: Login to GHCR
         uses: docker/login-action@v3
